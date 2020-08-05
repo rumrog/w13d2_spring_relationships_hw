@@ -1,0 +1,31 @@
+@startuml
+hide circle
+hide empty members
+skinparam linetype ortho
+
+entity "User" as user {
+  - name: string
+  - folders: array
+}
+
+entity "File" as file {
+  - name: string
+  - extension: string
+  - size: int
+}
+
+entity "Folder" as folder {
+  - name: string
+  - files: array
+  - user: string
+}
+
+
+
+
+user ||..o{ file
+user ||..o{ folder
+file }o..|| folder
+@enduml
+
+  
